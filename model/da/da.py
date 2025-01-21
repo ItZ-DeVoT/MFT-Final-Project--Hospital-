@@ -2,10 +2,11 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy_utils import create_database, database_exists
 from model.entity.base import Base
-from datetime import datetime
+from model.entity.patient import Patient
+from model.entity.doctor import Doctor
 
 
-connection_string = "mysql+pymysql://root:root123@localhost:3306/Hospital"
+connection_string = "mysql+pymysql://root:root123@localhost:3306/hospital"
 if not database_exists(connection_string):
     create_database(connection_string)
 
@@ -20,7 +21,7 @@ class DataAccess:
     def __init__(self, class_name):
 
         self.class_name = class_name
-    
+
     def save(self, entity):
         session.add(entity)
         session.commit()
