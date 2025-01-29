@@ -21,11 +21,11 @@ def edit_doctor(id ,name, family, specialization, contact_info):
     except Exception as e:
         return False, f"{e}"
 
-def remove_doctor_by_id(name, family, specialization, contact_info):
+def remove_doctor_by_id(id ,name, family, specialization, contact_info):
     try:
         doctor = Doctor(name, family, specialization, contact_info)
         doctor.id = id
-        doctor_da = DataAccess(doctor)
+        doctor_da = DataAccess(Doctor)
         doctor_da.remove(doctor)
         return True, doctor.show_doctor_info()
     except Exception as e:
@@ -35,7 +35,7 @@ def find_all_doctors():
     try:
         doctor_da = DataAccess(Doctor)
         all_doctors = doctor_da.find_all()
-        return True, all_doctors
+        return all_doctors
     except Exception as e:
         return False, f"{e}"
 

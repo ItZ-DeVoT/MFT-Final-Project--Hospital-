@@ -35,7 +35,7 @@ def find_all_patients():
     try:
         patient_da = DataAccess(Patient)
         all_patients = patient_da.find_all()
-        return True, all_patients
+        return all_patients
     except Exception as e:
         return False, f"{e}"
 

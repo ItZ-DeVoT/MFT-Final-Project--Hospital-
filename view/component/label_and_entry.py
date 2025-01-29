@@ -1,7 +1,7 @@
 from tkinter import *
 
 class LabelAndEntry:
-    def __init__(self, window, text, x, y, distance=80,data_type="str",state=None):
+    def __init__(self, window, text, x, y, distance=120,data_type="str",state=None):
         Label(window, text=text).place(x=x, y=y)
 
         match data_type:
@@ -16,5 +16,4 @@ class LabelAndEntry:
             case _:
                 self.variable = StringVar()
 
-        Entry(window, textvariable=self.variable, state=state).place(x=x + distance, y=y)
-
+        Entry(window, textvariable=self.variable, state=state, font=("Arial", 9)).place(x=x + distance, y=y)

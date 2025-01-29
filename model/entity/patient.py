@@ -53,7 +53,7 @@ class Patient(Base):
 
     @age.setter
     def age(self, value):
-        if type(value) == str and re.match("\d", value):
+        if type(value) == str and re.match("[1-90]", value):
             value = int(value)
             if 1 <= value <= 90:
                 self._age = value

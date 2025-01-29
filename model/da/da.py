@@ -5,7 +5,7 @@ from model.entity.base import Base
 from model.entity.patient import Patient
 from model.entity.doctor import Doctor
 from model.entity.appointment import Appointment
-
+from model.entity.medical_record import MedicalRecord
 
 connection_string = "mysql+pymysql://root:root123@localhost:3306/hospital"
 if not database_exists(connection_string):
